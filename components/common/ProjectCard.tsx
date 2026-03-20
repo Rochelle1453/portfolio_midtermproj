@@ -3,19 +3,11 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
+import type { Project } from "@/types/project";
+
 type ProjectCardProps = {
-    project: {
-        title: string;
-        category?: string;
-        description: string;
-        tags: string[];
-        image: string;
-        links: {
-            demo: string;
-            github: string;
-        };
-    };
-}
+  project: Project;
+};
 
 export function ProjectCard({ project }: ProjectCardProps) {
     return (

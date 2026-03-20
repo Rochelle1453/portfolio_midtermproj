@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/common/ThemeToggle";
 
@@ -11,7 +12,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
-  { href: "/blog", label: "Blog" },
+  // { href: "/blog", label: "Blog" },
 ] as const;
 
 export function Header() {
@@ -19,11 +20,11 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-purple-400">
       {/* Bar: Logo + nav + ThemeToggle + Menu — always on top, solid background */}
-      <div className="relative z-10 container mx-auto flex h-14 items-center justify-between gap-4 bg-background px-4 sm:px-6">
-        <Link href="/" className="font-bold text-2xl text-foreground shrink-0">
-          Portfolio
+      <div className="relative z-10 container mx-auto flex h-14 items-center justify-between text-white gap-4 px-4 sm:px-6">
+        <Link href="/">
+          <Image src="/MY_LOGO-removebg-preview.png" alt="LOGO" width={100} height={100}/>
         </Link>
 
         <nav className="hidden md:flex items-center gap-2 lg:gap-4">
@@ -34,9 +35,9 @@ export function Header() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className={`rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-accent hover:text-accent-foreground ${isActive
-                      ? "bg-accent text-accent-foreground font-medium"
-                      : "text-muted-foreground"
+                    className={`rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-white/20 ${isActive
+                      ? "bg-white/20 text-white font-medium"
+                      : "text-white/80 hover:text-white"
                       }`}
                   >
                     {label}

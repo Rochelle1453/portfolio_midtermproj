@@ -1,24 +1,39 @@
-
-import { Button } from "@/components/ui/button";
-import { Mail } from "lucide-react";
-import { Section } from "@/components/common/Section";
 import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Facebook, Github, Instagram } from "lucide-react";
+import { Section } from "@/components/common/Section";
 
 export function Contact() {
     return (
-        <Section id="contact" className="space-y-12">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Get in touch</h2>
-                <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-                </p>
+        <Section className="grid lg:grid-cols-2 gap-8 items-center min-h-[calc(100vh-4rem)]">
+            <div className="flex justify-center items-center">
+                <Image
+                    src="/getAqoute.png"
+                    alt="Get A Quote Image"
+                    width={500}
+                    height={500}
+                    className="rounded-2xl shadow-2xl object-cover w-full max-w-[500px] aspect-square transform rotate-3 hover:rotate-0 transition-transform duration-500"
+                />
+            </div>
 
-                <Button size="lg" asChild>
-                    <Link href="mailto:hello@example.com">
-                        <Mail className="mr-1 h-4 w-4" />
-                        Say Hello
+            <div className="flex flex-col items-center lg:items-start justify-center space-y-8">
+                <div className="space-y-10 text-right">
+                        <h1 className="text-xl font-bold trackin-normal sm:text-2xl md:text-4xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
+                            Let's Build A Website<br className="hidden md:inline" />
+                        </h1>
+                    <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed tracking-wider">
+                        Bridging the gap between bold design and clean code to build your business’s future.
+                    </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 w-full justify-end">
+                    <Link href="/projects">
+                        <Button size="lg" className="group w-full rounded-[15px] px-[50px] py-[12px] bg-purple-500 lg:w-auto">
+                            Get A Quote!
+                        </Button>
                     </Link>
-                </Button>
+                </div>
             </div>
         </Section>
     );
