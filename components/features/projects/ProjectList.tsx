@@ -6,7 +6,7 @@ import { ProjectCard } from "@/components/common/ProjectCard";
 import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { MoveRight, Search, ChevronRight, ChevronLeft} from "lucide-react";
+import { MoveRight, Search, ChevronRight, ChevronLeft } from "lucide-react";
 import { SectionHeading } from "@/components/common/SectionHeading";
 
 const CATEGORIES = ["All", ...Array.from(new Set(PROJECTS.map(p => p.category)))];
@@ -55,6 +55,11 @@ export function ProjectList() {
                             key={category}
                             variant={filter === category ? "default" : "outline"}
                             size="sm"
+                            className={`transition-colors 
+            ${filter === category
+                                    ? "bg-purple-500 text-white hover:bg-purple-500"
+                                    : "text-muted-foreground hover:bg-purple-100/50"
+                                }`}
                             onClick={() => {
                                 setFilter(category || "All");
                                 setCurrentPage(1);
@@ -72,7 +77,7 @@ export function ProjectList() {
                         value={searchQuery}
                         onChange={(e) => {
                             setSearchQuery(e.target.value);
-                            setCurrentPage(1); 
+                            setCurrentPage(1);
                         }}
                         className="pl-8"
                     />
@@ -96,12 +101,13 @@ export function ProjectList() {
                     <Button
                         size="sm"
                         variant="outline"
+                        className="hover:bg-purple-600 hover:text-white transition-colors"
                         onClick={() =>
                             setCurrentPage((prev) => Math.max(prev - 1, 1))
                         }
                         disabled={currentPage === 1}
                     >
-                        <ChevronLeft/>
+                        <ChevronLeft />
                     </Button>
 
                     {Array.from({ length: totalPages }, (_, i) => (
@@ -109,6 +115,10 @@ export function ProjectList() {
                             key={i}
                             size="sm"
                             variant={currentPage === i + 1 ? "default" : "outline"}
+                            className={`transition-colors ${currentPage === i + 1
+                                ? "bg-purple-500 text-white hover:bg-purple-500"
+                                : "text-muted-foreground hover:bg-purple-100/50"
+                                }`}
                             onClick={() => setCurrentPage(i + 1)}
                         >
                             {i + 1}
