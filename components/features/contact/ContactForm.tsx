@@ -14,13 +14,14 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Field, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { InputGroup, InputGroupAddon, InputGroupText, InputGroupTextarea, } from "@/components/ui/input-group";
-import { Send } from "lucide-react";
+import { MoveRight, Phone, MapPin, Mail, Dot, Facebook, Instagram, Github, Fullscreen } from "lucide-react";
 import { toast } from "sonner";
+import { SectionHeading } from "@/components/common/SectionHeading";
 
 const formSchema = z.object({
-	name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+	firstName: z.string().min(2, { message: "First Name must be at least 2 characters." }),
+	lastName: z.string().min(2, { message: "Last Name must be at least 2 characters." }),
 	email: z.string().email({ message: "Invalid email address." }),
-	subject: z.string().min(5, { message: "Subject must be at least 5 characters." }),
 	message: z.string().min(10, { message: "Message must be at least 10 characters." }).max(500, { message: "Message must be at most 500 characters." }),
 });
 
@@ -30,12 +31,12 @@ export function ContactForm() {
 	const form = useForm<FormData>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
-			name: "",
+			firstName: "",
+			lastName: "",
 			email: "",
-			subject: "",
 			message: "",
-			},
-		});
+		},
+	});
 
 	const onSubmit = async (data: FormData) => {
 		console.log("Form submitted:", data);
@@ -46,33 +47,16 @@ export function ContactForm() {
 
 	return (
 		<Section className="min-h-screen">
+			<SectionHeading
+				icon={<MoveRight className="h-8 w-8 text-primary" />}
+				title="CONTACT"
+			/>
 			<div className="grid lg:grid-cols-2 lg:gap-24 gap-12 items-center">
-				<div className="space-y-6">
-					<h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-						Let's Work Together
-					</h1>
-					<p className="text-muted-foreground md:text-xl/relaxed">
-						Have a project in mind or just want to chat? Fill out the form or reach out directly. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
-					</p>
-
-					<div className="space-y-4 pt-4">
-						<div className="flex items-center gap-3">
-							<div className="h-10 w-10 flex items-center justify-center rounded-full bg-primary/10 text-primary">
-								<Send className="h-5 w-5" />
-							</div>
-							<div>
-								<p className="font-medium">Email</p>
-								<p className="text-muted-foreground">hello@example.com</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
 				<Card className="w-full">
 					<CardHeader>
-						<CardTitle>Contact Me</CardTitle>
-						<CardDescription>
-							Fill out the form below to send me a message.
+						<CardTitle className="text-4xl font-bold">Let's Talk</CardTitle>
+						<CardDescription className="text-muted-foreground text-lg ">
+							Have a project, idea, or opportunity in mind? I'd love to hear from you. Let's connect and talk about it.
 						</CardDescription>
 					</CardHeader>
 					<CardContent>
@@ -80,17 +64,17 @@ export function ContactForm() {
 							<FieldGroup	>
 								<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 									<Controller
-										name="name"
+										name="firstName"
 										control={form.control}
 										render={({ field, fieldState }) => (
 											<Field data-invalid={fieldState.invalid}>
-												<FieldLabel htmlFor="name">Name</FieldLabel>
+												<FieldLabel htmlFor="firstName">First Name</FieldLabel>
 												<Input
 													{...field}
-													id="name"
+													id="firstName"
 													aria-invalid={fieldState.invalid}
-													placeholder="John Doe"
-													autoComplete="name"
+													placeholder="John"
+													autoComplete="given-name"
 												/>
 												{fieldState.invalid && (
 													<FieldError errors={[fieldState.error]} />
@@ -99,18 +83,17 @@ export function ContactForm() {
 										)}
 									/>
 									<Controller
-										name="email"
+										name="lastName"
 										control={form.control}
 										render={({ field, fieldState }) => (
 											<Field data-invalid={fieldState.invalid}>
-												<FieldLabel htmlFor="email">Email</FieldLabel>
+												<FieldLabel htmlFor="lastName">Last Name</FieldLabel>
 												<Input
 													{...field}
-													id="email"
-													type="email"
+													id="lastName"
 													aria-invalid={fieldState.invalid}
-													placeholder="john@example.com"
-													autoComplete="email"
+													placeholder="Doe"
+													autoComplete="family-name"
 												/>
 												{fieldState.invalid && (
 													<FieldError errors={[fieldState.error]} />
@@ -118,19 +101,21 @@ export function ContactForm() {
 											</Field>
 										)}
 									/>
-								</div>
 
+								</div>
 								<Controller
-									name="subject"
+									name="email"
 									control={form.control}
 									render={({ field, fieldState }) => (
 										<Field data-invalid={fieldState.invalid}>
-											<FieldLabel htmlFor="subject">Subject</FieldLabel>
+											<FieldLabel htmlFor="email">Email</FieldLabel>
 											<Input
 												{...field}
-												id="subject"
+												id="email"
+												type="email"
 												aria-invalid={fieldState.invalid}
-												placeholder="Project Inquiry"
+												placeholder="john@example.com"
+												autoComplete="email"
 											/>
 											{fieldState.invalid && (
 												<FieldError errors={[fieldState.error]} />
@@ -170,11 +155,48 @@ export function ContactForm() {
 						</form>
 					</CardContent>
 					<CardFooter>
-						<Button type="submit" form="contact-form" className="w-full" size="lg" disabled={form.formState.isSubmitting}>
-							{form.formState.isSubmitting ? "Sending..." : "Send Message"}
+						<Button type="submit" form="contact-form" className="w-fit px-10 bg-purple-500" size="lg" disabled={form.formState.isSubmitting}>
+							{form.formState.isSubmitting ? "Sending..." : "Submit"}
 						</Button>
 					</CardFooter>
 				</Card>
+
+				<div className="space-y-2 grid grid-row-2">
+					<img src="./contact.png" alt="contact image" />
+					<p className="font-medium">Contact Information</p>
+					<div>
+
+						<div className="grid grid-rows-2 items-center">
+							<div className="grid grid-rows-3 items-center gap-1 ">
+								<div className="flex items-center gap-3 ">
+									<Mail className="h-5 w-5" />
+									<p>hoperochelleandales@gmail.com</p>
+								</div>
+								<div className="flex items-center gap-3 ">
+									<MapPin className="h-5 w-5" />
+									<p>Cebu, Philippines</p>
+								</div>
+								<div className="flex items-center gap-3 ">
+									<Phone className="h-5 w-5" />
+									<p>+63 975 322 1337</p>
+								</div>
+							</div>
+							<hr className="border-black opacity-100 -mt-10" />
+							<div className="flex items-center -mt-15">
+								<a href="https://www.facebook.com/rochelle.andales.90/" target="_blank" rel="noopener noreferrer">
+									<Facebook />
+								</a><Dot />
+								<a href="https://www.instagram.com/itz_rchll_21/" target="_blank" rel="noopener noreferrer">
+									<Instagram />
+								</a><Dot />
+								<a href="https://github.com/Rochelle1453" target="_blank" rel="noopener noreferrer">
+									<Github />
+								</a>
+							</div>
+
+						</div>
+					</div>
+				</div>
 			</div>
 		</Section>
 	);
