@@ -8,9 +8,8 @@ export function Projects() {
   return (
     <Section id="projects" className="relative space-y-12">
 
-      {/* Header */}
       <div>
-        <p className="bg-purple-300 p-2 w-fit text-xs rounded-[10px] tracking-widest">
+        <p className="bg-purple-300 text-white dark:text-black p-2 w-fit text-xs rounded-[10px] tracking-widest">
           MY WORK
         </p>
 
@@ -19,10 +18,8 @@ export function Projects() {
         </h1>
       </div>
 
-      {/* 👇 Client Carousel */}
       <ProjectsCarousel projects={PROJECTS} />
 
-      {/* More Projects */}
       <div className="flex justify-end">
         <Link href="/projects">
           <Button variant="outline" size="lg" className="group">
