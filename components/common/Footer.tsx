@@ -11,11 +11,9 @@ const quickLinks = [
 
 export function Footer() {
   return (
-    // sticky top-0 z-50 w-full border-b border-border  
-    <footer className="w-full border-t border-border bg-purple-400 text-white">
+    <footer className="w-full border-t border-border bg-purple-400 text-white bg-purple-900/40">
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10">
         <div className="grid gap-8 lg:grid-cols-3">
-          {/* Brand */}
           <div className="space-y-2">
             <div className="flex flex-row items-center shrink-0 -ml-3">
               <Link href="/">
@@ -42,7 +40,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Quick links */}
           <div className="flex flex-col items-center text-left ">
             <h3 className="mb-3 text-sm font-medium mb-8">Quick links</h3>
             <ul className="space-y-2">

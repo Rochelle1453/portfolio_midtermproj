@@ -12,7 +12,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
-  // { href: "/blog", label: "Blog" },
+  { href: "/blog", label: "Blog" },
 ] as const;
 
 export function Header() {
@@ -20,8 +20,7 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-purple-400">
-      {/* Bar: Logo + nav + ThemeToggle + Menu — always on top, solid background */}
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-purple-400 dark:bg-purple-800">
       <div className="relative z-10 container mx-auto flex h-14 items-center justify-between text-white gap-4 px-4 sm:px-6">
         <Link href="/">
           <Image src="/MY_LOGO-removebg-preview.png" alt="LOGO" width={100} height={100}/>
@@ -68,7 +67,6 @@ export function Header() {
         </div>
       </div>
 
-      {/* Backdrop: only below the bar, dims the page */}
       {open && (
         <div
           className="md:hidden fixed inset-0 top-14 left-0 right-0 bottom-0 z-0 bg-black/50 backdrop-blur-sm"
@@ -77,7 +75,6 @@ export function Header() {
         />
       )}
 
-      {/* Menu panel: below the bar, above the backdrop */}
       {open && (
         <div className="md:hidden relative z-10 border-t border-border bg-background">
           <nav className="container mx-auto px-4 py-4">
