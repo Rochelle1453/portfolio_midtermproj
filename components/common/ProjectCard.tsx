@@ -58,7 +58,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
                 <div className="flex pt-4 mt-auto border-t">
                     <div className="flex gap-2 w-full">
-                        <Button size="sm" className="flex-1" asChild>
+                        <Button size="sm" className="flex-1 bg-purple-500" asChild>
                             <Link href={project.links.github} target="_blank" rel="noopener noreferrer">
                                 <Eye className="h-4 w-4 mr-2 shrink-0" />
                                 View project

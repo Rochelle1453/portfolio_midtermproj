@@ -22,7 +22,7 @@ export function Projects() {
 
       <div className="flex justify-end">
         <Link href="/projects">
-          <Button variant="outline" size="lg" className="group">
+          <Button variant="outline" size="lg" className="group hover:shadow-purple-500">
             More Projects
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
