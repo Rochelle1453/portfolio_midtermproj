@@ -28,9 +28,8 @@ export function ProjectActions({ projectId }: Props) {
   useEffect(() => {
     const storedLikes = localStorage.getItem(`likes-${projectId}`);
     const storedComments = localStorage.getItem(`comments-${projectId}`);
-    if (storedLikes) {
-      setLikes(parseInt(storedLikes));
-    }
+
+    if (storedLikes) setLikes(parseInt(storedLikes));
     if (storedComments) setComments(JSON.parse(storedComments));
   }, [projectId]);
 
@@ -63,8 +62,8 @@ export function ProjectActions({ projectId }: Props) {
   }
 
   return (
-    <div className="relative flex items-center gap-1 shrink-0">
-      <div className="absolute left-1/2 -translate-x-1/2 bottom-6 pointer-events-none">
+    <div className="relative flex items-center gap-1 sm:gap-2 shrink-0">
+      <div className="absolute right-10 bottom-5 pointer-events-none">
         {hearts.map((heart) => (
           <Heart
             key={heart.id}
@@ -77,12 +76,12 @@ export function ProjectActions({ projectId }: Props) {
         variant="ghost"
         size="icon"
         onClick={handleLike}
-        className="transition-transform hover:scale-110 active:scale-125 text-red-500"
+        className="text-red-500 hover:scale-110 active:scale-125 transition-transform"
       >
         <Heart className="h-4 w-4 fill-current" />
       </Button>
 
-      <span className="text-xs text-muted-foreground min-w-[20px] text-center">
+      <span className="text-xs text-muted-foreground w-5 text-center">
         {likes}
       </span>
 
@@ -95,29 +94,39 @@ export function ProjectActions({ projectId }: Props) {
       </Button>
 
       {showComments && (
-        <div className="w-64 border rounded-md p-2 bg-background shadow-md space-y-2">
-          <div className="flex gap-1">
-            <Input
-              placeholder="Write a comment..."
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              className="h-8 text-xs"
-            />
-            <Button size="sm" onClick={addComment}>
-              Post
-            </Button>
-          </div>
+        <div className="absolute right-0 top-10 z-50 w-[16rem] sm:w-[18rem] max-w-[90vw]">
+          <div className="rounded-md border bg-background p-3 shadow-lg animate-in fade-in zoom-in-95">
+            
+            <div className="flex gap-2">
+              <Input
+                placeholder="Write a comment..."
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                className="h-9 text-xs w-full"
+              />
+              <Button
+                size="sm"
+                onClick={addComment}
+                disabled={!input.trim()}
+                className="text-xs"
+              >
+                Post
+              </Button>
+            </div>
 
-          <div className="max-h-32 overflow-y-auto space-y-1">
-            {comments.length > 0 ? (
-              comments.map((c) => (
-                <div key={c.id} className="text-xs bg-muted px-2 py-1 rounded">
-                  {c.text}
-                </div>
-              ))
-            ) : (
-              <p className="text-xs text-muted-foreground">No comments yet.</p>
-            )}
+            <div className="max-h-40 overflow-y-auto space-y-2 mt-2">
+              {comments.length > 0 ? (
+                comments.map((c) => (
+                  <div key={c.id} className="text-xs bg-muted px-2 py-1 rounded">
+                    {c.text}
+                  </div>
+                ))
+              ) : (
+                <p className="text-xs text-muted-foreground">
+                  No comments yet.
+                </p>
+              )}
+            </div>
           </div>
         </div>
       )}

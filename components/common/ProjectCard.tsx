@@ -34,19 +34,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
             <div className="p-4 space-y-4 flex flex-col flex-grow">
                 <div className="space-y-2">
-  <div className="flex items-start justify-between gap-2">
-    
-    <h3 className="font-bold text-xl group-hover:underline decoration-primary decoration-2 underline-offset-4">
-      {project.title}
-    </h3>
+                    <div className="flex items-start justify-between gap-2">
 
-    <ProjectActions projectId={project.id} />
-  </div>
+                        <h3 className="font-bold text-xl group-hover:underline decoration-primary decoration-2 underline-offset-4">
+                            {project.title}
+                        </h3>
 
-  <p className="text-sm text-muted-foreground line-clamp-3">
-    {project.description}
-  </p>
-</div>
+                        <ProjectActions projectId={project.id} />
+                    </div>
+
+                    <p className="text-sm text-muted-foreground line-clamp-3">
+                        {project.description}
+                    </p>
+                </div>
 
                 <div className="flex flex-wrap gap-2 mt-auto pt-4">
                     {project.tags.map((tag) => (
