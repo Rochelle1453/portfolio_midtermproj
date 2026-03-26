@@ -29,7 +29,7 @@ export function Profile() {
                 />
             </div>
 
-            <div className="p-6 w-fit space-y-4 text-gray-800">
+            <div className="p-6 w-fit space-y-4 text-gray-800/relaxed">
                 <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5" />
                     <p className="text-sm">+63 975 322 1337</p>

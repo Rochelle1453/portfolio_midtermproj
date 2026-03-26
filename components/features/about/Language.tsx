@@ -27,7 +27,7 @@ function Stars({ count } : { count: number }) {
           key={i}
           size={16}
           className={`${
-            i < count ? "fill-black text-black" : "text-gray-400"
+            i < count ? "fill-black text-black dark:fill-purple-500 dark:text-white" : "text-gray-400"
           }`}
         />
       ))}
@@ -45,12 +45,10 @@ export function Language() {
       <div className="flex justify-center gap-20 flex-wrap">
         {languages.map((lang, index) => (
           <div key={index} className="flex flex-col items-center">
-            {/* Label */}
             <div className="bg-purple-300 px-6 py-2 rounded-full mb-4">
-              <p className="font-medium">{lang.name}</p>
+              <p className="font-medium dark:text-black">{lang.name}</p>
             </div>
 
-            {/* Ratings */}
             <div className="text-sm space-y-2">
               <div className="flex items-center gap-2">
                 <span>Spoken</span>

@@ -1,12 +1,6 @@
 import { Section } from "@/components/common/Section";
 
-import {
-    Layout,
-    Pencil,
-    User,
-    PenTool,
-    Image,
-} from "lucide-react";
+import { Layout, Pencil, User, PenTool, Image } from "lucide-react";
 
 const skills = [
     { name: "Frontend\nDevelopment", icon: Layout },
@@ -27,8 +21,8 @@ export function Skills() {
 
                     return (
                         <div key={index} className="flex flex-col items-center">
-                            <div className="w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center mb-4 hover:scale-110 transition">
-                                <Icon size={36} />
+                            <div className="w-24 h-24 bg-purple-300 rounded-full flex items-center justify-center mb-4 hover:scale-110 transition">
+                                <Icon size={36} className="text-gray-800 dark:text-black" />
                             </div>
 
                             <p className="text-lg italic text-center whitespace-pre-line md:text-xl/relaxed">

@@ -1,14 +1,11 @@
 "use client";
 
-// START FORM IMPORTS - This group need to be: npm install zod @hookform/resolvers react-hook-form
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
-// ============================ END
 
 import { Section } from "@/components/common/Section";
 
-// ShadCN Components
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Field, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field";
@@ -181,7 +178,7 @@ export function ContactForm() {
 									<p>+63 975 322 1337</p>
 								</div>
 							</div>
-							<hr className="border-black opacity-100 -mt-10" />
+							<hr className="border-black dark:border-white opacity-100 -mt-10" />
 							<div className="flex items-center -mt-15">
 								<a href="https://www.facebook.com/rochelle.andales.90/" target="_blank" rel="noopener noreferrer">
 									<Facebook />
