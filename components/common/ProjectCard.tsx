@@ -1,4 +1,5 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ProjectActions } from "@/components/features/projects/ProjectActions";
+import { Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,7 +7,7 @@ import Link from "next/link";
 import type { Project } from "@/types/project";
 
 type ProjectCardProps = {
-  project: Project;
+    project: Project;
 };
 
 export function ProjectCard({ project }: ProjectCardProps) {
@@ -33,13 +34,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
             <div className="p-4 space-y-4 flex flex-col flex-grow">
                 <div className="space-y-2">
-                    <h3 className="font-bold text-xl group-hover:underline decoration-primary decoration-2 underline-offset-4">
-                        {project.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground line-clamp-3">
-                        {project.description}
-                    </p>
-                </div>
+  <div className="flex items-start justify-between gap-2">
+    
+    <h3 className="font-bold text-xl group-hover:underline decoration-primary decoration-2 underline-offset-4">
+      {project.title}
+    </h3>
+
+    <ProjectActions projectId={project.id} />
+  </div>
+
+  <p className="text-sm text-muted-foreground line-clamp-3">
+    {project.description}
+  </p>
+</div>
 
                 <div className="flex flex-wrap gap-2 mt-auto pt-4">
                     {project.tags.map((tag) => (
@@ -53,14 +60,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
                     <div className="flex gap-2 w-full">
                         <Button size="sm" className="flex-1" asChild>
                             <Link href={project.links.github} target="_blank" rel="noopener noreferrer">
-                                <Github className="h-4 w-4 mr-2 shrink-0" />
-                                GitHub
-                            </Link>
-                        </Button>
-                        <Button variant="outline" size="sm" className="flex-1" asChild>
-                            <Link href={project.links.demo} target="_blank" rel="noopener noreferrer">
-                                <ExternalLink className="h-4 w-4 mr-2 shrink-0" />
-                                Demo
+                                <Eye className="h-4 w-4 mr-2 shrink-0" />
+                                View project
                             </Link>
                         </Button>
                     </div>
