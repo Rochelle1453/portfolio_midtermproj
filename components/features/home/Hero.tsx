@@ -23,7 +23,7 @@ export function Hero() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 w-full">
-                    <Link href="/projects">
+                    <Link href="/about">
                         <Button size="lg" className="group w-full rounded-[15px] px-[50px] py-[12px] bg-purple-500 lg:w-auto">
                             Learn More
                         </Button>
