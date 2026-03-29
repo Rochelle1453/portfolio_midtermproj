@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { BlogPost } from "@/constants/blog";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar } from "lucide-react";
 import { Section } from "@/components/common/Section";

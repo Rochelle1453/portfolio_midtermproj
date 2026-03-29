@@ -1,6 +1,7 @@
 "use client";
 
 import z from "zod";
+import Image from "next/image";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
 
@@ -11,7 +12,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Field, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { InputGroup, InputGroupAddon, InputGroupText, InputGroupTextarea, } from "@/components/ui/input-group";
-import { MoveRight, Phone, MapPin, Mail, Dot, Facebook, Instagram, Github, Fullscreen } from "lucide-react";
+import { MoveRight, Phone, MapPin, Mail, Dot, Facebook, Instagram, Github } from "lucide-react";
 import { toast } from "sonner";
 import { SectionHeading } from "@/components/common/SectionHeading";
 
@@ -51,9 +52,9 @@ export function ContactForm() {
 			<div className="grid lg:grid-cols-2 lg:gap-24 gap-12 items-center">
 				<Card className="w-full">
 					<CardHeader>
-						<CardTitle className="text-4xl font-bold">Let's Talk</CardTitle>
+						<CardTitle className="text-4xl font-bold">Let&apos;s Talk</CardTitle>
 						<CardDescription className="text-muted-foreground text-lg ">
-							Have a project, idea, or opportunity in mind? I'd love to hear from you. Let's connect and talk about it.
+							Have a project, idea, or opportunity in mind? I&apos;d love to hear from you. Let&apos;s connect and talk about it.
 						</CardDescription>
 					</CardHeader>
 					<CardContent>
@@ -159,7 +160,13 @@ export function ContactForm() {
 				</Card>
 
 				<div className="space-y-2 grid grid-row-2">
-					<img src="./contact.png" alt="contact image" />
+					<Image
+						src="/contact.png"
+						alt="contact image"
+						width={500}
+						height={500}
+						className="w-full h-auto"
+					/>
 					<p className="font-medium">Contact Information</p>
 					<div>
 

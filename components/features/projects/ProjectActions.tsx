@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Heart, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,19 +19,22 @@ type Comment = {
 };
 
 export function ProjectActions({ projectId }: Props) {
-  const [likes, setLikes] = useState(0);
+  const [likes, setLikes] = useState<number>(() => {
+    if (typeof window === "undefined") return 0;
+    const stored = localStorage.getItem(`likes-${projectId}`);
+    return stored ? parseInt(stored) : 0;
+  });
+
   const [hearts, setHearts] = useState<FloatingHeart[]>([]);
-  const [comments, setComments] = useState<Comment[]>([]);
+
+  const [comments, setComments] = useState<Comment[]>(() => {
+    if (typeof window === "undefined") return [];
+    const stored = localStorage.getItem(`comments-${projectId}`);
+    return stored ? JSON.parse(stored) : [];
+  });
+
   const [showComments, setShowComments] = useState(false);
   const [input, setInput] = useState("");
-
-  useEffect(() => {
-    const storedLikes = localStorage.getItem(`likes-${projectId}`);
-    const storedComments = localStorage.getItem(`comments-${projectId}`);
-
-    if (storedLikes) setLikes(parseInt(storedLikes));
-    if (storedComments) setComments(JSON.parse(storedComments));
-  }, [projectId]);
 
   function handleLike() {
     const newLikes = likes + 1;

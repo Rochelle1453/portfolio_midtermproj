@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Facebook, Github, Instagram } from "lucide-react";
+import { Facebook, Github, Instagram } from "lucide-react";
 import { Section } from "@/components/common/Section";
 
 export function Hero() {
@@ -11,7 +11,7 @@ export function Hero() {
                 <div className="space-y-10">
                     <div className="flex flex-col items-center">
                         <h1 className="text-xl font-bold tracking-tight sm:text-2xl md:text-4xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-foreground to-purple-800/70">
-                            Hi I'm Rochelle B. Andales<br className="hidden md:inline" />
+                            Hi I&apos;m Rochelle B. Andales<br className="hidden md:inline" />
                         </h1>
                         <p className="text-sm font-bold tracking-tighter sm:text-base md:text-xl lg:text-2xl bg-clip-text text-transparent bg-gradient-to-r from-foreground to-purple-800/70">
                             Web Developer | Programmer

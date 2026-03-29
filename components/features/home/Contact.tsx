@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Facebook, Github, Instagram } from "lucide-react";
 import { Section } from "@/components/common/Section";
 
 export function Contact() {
@@ -20,10 +19,10 @@ export function Contact() {
             <div className="flex flex-col items-center lg:items-start justify-center space-y-8">
                 <div className="space-y-10 text-right">
                         <h1 className="text-xl font-bold trackin-normal sm:text-2xl md:text-4xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-foreground to-purple-800/70">
-                            Let's Build A Website<br className="hidden md:inline" />
+                            Let&apos;s Build A Website<br className="hidden md:inline" />
                         </h1>
                     <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed tracking-wider">
-                        Bridging the gap between bold design and clean code to build your business’s future.
+                        Bridging the gap between bold design and clean code to build your business&apos;s future.
                     </p>
                 </div>
 

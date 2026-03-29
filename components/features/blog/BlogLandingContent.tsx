@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BlogPost, BLOG_POSTS } from "@/constants/blog";
+import { BLOG_POSTS } from "@/constants/blog";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Section } from "@/components/common/Section";

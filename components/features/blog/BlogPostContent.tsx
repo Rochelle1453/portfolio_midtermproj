@@ -51,7 +51,7 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
           Route Strategy: <span className="text-primary">[slug]</span>
         </p>
         <p className="text-xs text-muted-foreground mt-1">
-          This matches an exact segment. Variable: slug = "{post.slug}"
+          This matches an exact segment. Variable: slug = &quot;{post.slug}&quot;
         </p>
       </div>
     </Section>
