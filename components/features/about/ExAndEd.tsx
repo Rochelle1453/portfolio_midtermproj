@@ -47,20 +47,22 @@ const education: Education[] = [
 export function WorkEducation() {
   return (
     <Section>
-      <div className="flex flex-col md:flex-row items-center justify-center gap-0">
-        
+      <div className="relative flex flex-col md:flex-row items-stretch justify-center -ml-0 md:-ml-200">
+
         {/* IMAGE */}
-        <Image
-          src="/WorkEducation.png"
-          alt="Profile"
-          width={500}
-          height={800}
-          className="object-contain -mr-0 md:-mr-30 w-auto h-auto"
-        />
+        <div className="relative md:w-1/2 flex justify-end">
+          <Image
+            src="/example.png"
+            alt="Profile"
+            width={600}
+            height={900}
+            className="object-contain h-full w-auto md:absolute md:bottom-0 md:right-0 md:-mr-18"
+          />
+        </div>
 
         {/* CONTENT */}
         <div className="border-2 border-purple-400 rounded-t-[200px] rounded-b-lg px-10 py-30 max-w-md w-full">
-          
+
           {/* WORK EXPERIENCE */}
           <h2 className="text-3xl italic font-semibold mb-6 text-start">
             Working Experience
@@ -70,13 +72,11 @@ export function WorkEducation() {
             {experiences.map((exp, index) => (
               <div key={index} className="relative space-y-3">
                 <span className="absolute -left-[1.95rem] text-primary bg-background flex items-center justify-center text-s">
-  ★
-</span>
-                
+                  ★
+                </span>
                 <p className="text-sm">{exp.period}</p>
                 <p className="text-sm font-medium">{exp.title}</p>
                 <p className="text-sm">{exp.company}</p>
-
                 {exp.description.map((item, i) => (
                   <p key={i} className="text-sm ml-6 list-disc">
                     {item}
@@ -95,9 +95,8 @@ export function WorkEducation() {
             {education.map((edu, index) => (
               <div key={index} className="relative space-y-3">
                 <span className="absolute -left-[1.95rem] text-primary bg-background flex items-center justify-center text-s">
-  ★
-</span>
-                
+                  ★
+                </span>
                 <p className="text-sm">{edu.period}</p>
                 <p className="text-sm font-medium">{edu.school}</p>
                 <p className="text-sm">{edu.location}</p>
