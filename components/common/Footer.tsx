@@ -17,7 +17,7 @@ export function Footer() {
           <div className="space-y-2">
             <div className="flex flex-row items-center shrink-0 -ml-3">
               <Link href="/">
-                <Image src="/MY_LOGO-removebg-preview.png" alt="LOGO" width={100} height={100} className="sm:w-24 sm:w-10 w-auto h-auto" />
+                <Image src="/MY_LOGO.png" alt="LOGO" width={100} height={100} className="sm:w-24 sm:w-10 w-auto h-auto" />
               </Link>
               <div className="font-bold text-md sm:text-sm md:text-xl lg:text-2xl -ml-2">
                 <h1>OCHELLE B. ANDALES</h1>
