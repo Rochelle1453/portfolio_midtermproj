@@ -15,13 +15,14 @@ type Props = {
 };
 
 export function ProjectsCarousel({ projects }: Props) {
+  const recentProjects = projects.slice(0, 6);
+
   return (
     <div className="relative w-full max-w-6xl mx-auto px-4">
-      
       <Carousel opts={{ align: "start" }} className="w-full">
         
         <CarouselContent className="-ml-4">
-          {projects.map((project, index) => (
+          {recentProjects.map((project, index) => (
             <CarouselItem
               key={index}
               className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"

@@ -86,8 +86,8 @@ export function ProjectList() {
 
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {currentProjects.length > 0 ? (
-                    currentProjects.map((project, index) => (
-                        <ProjectCard key={index} project={project} />
+                    currentProjects.map((project) => (
+                        <ProjectCard key={project.id} project={project} />
                     ))
                 ) : (
                     <div className="col-span-full text-center py-12 text-muted-foreground">
