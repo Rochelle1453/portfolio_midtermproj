@@ -23,7 +23,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border bg-purple-400 dark:bg-purple-800">
       <div className="relative z-10 container mx-auto flex h-14 items-center justify-between text-white gap-4 px-4 sm:px-6">
         <Link href="/">
-          <Image src="/MY_LOGO-removebg-preview.png" alt="LOGO" width={100} height={100}/>
+          <Image src="/MY_LOGO-removebg-preview.png" alt="LOGO" width={100} height={100} className="w-auto h-auto"/>
         </Link>
 
         <nav className="hidden md:flex items-center gap-2 lg:gap-4">

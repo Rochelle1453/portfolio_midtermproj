@@ -55,7 +55,7 @@ export function WorkEducation() {
           alt="Profile"
           width={500}
           height={800}
-          className="object-contain -mr-0 md:-mr-30"
+          className="object-contain -mr-0 md:-mr-30 w-auto h-auto"
         />
 
         {/* CONTENT */}
