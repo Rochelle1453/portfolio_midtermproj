@@ -51,7 +51,7 @@ export function Hero() {
                     alt="Me Image"
                     width={500}
                     height={500}
-                    className="rounded-2xl shadow-2xl object-cover w-full max-w-[500px] aspect-square transform rotate-3 hover:rotate-0 transition-transform duration-500"
+                    className="rounded-2xl shadow-2xl dark:shadow-purple-400 dark:shadow-sm object-cover w-full max-w-[500px] aspect-square transform rotate-3 hover:rotate-0 transition-transform duration-500"
                 />
             </div>
         </Section>
