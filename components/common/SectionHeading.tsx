@@ -12,7 +12,7 @@ export function SectionHeading({ title, description, icon }: SectionHeadingProps
       </div>
       )}
 
-      <h2 className="text-3xl font-bold tracking-wide sm:text-4xl md:text-5xl">{title}</h2>
+      <h2 className="text-3xl font-extrabold tracking-wide sm:text-4xl md:text-5xl ">{title}</h2>
       </div>
       <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mx-auto md:mx-0">
         {description}
