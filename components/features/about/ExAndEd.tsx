@@ -50,13 +50,13 @@ export function WorkEducation() {
       <div className="relative flex flex-col md:flex-row items-stretch justify-center -ml-0 md:-ml-200">
 
         {/* IMAGE */}
-        <div className="relative md:w-1/2 flex justify-end">
+        <div className="relative md:w-1/2 flex justify-end sm:justify-center">
           <Image
-            src="/example.png"
+            src="/ExAndEducation.png"
             alt="Profile"
             width={600}
             height={900}
-            className="object-contain h-full w-auto md:absolute md:bottom-0 md:right-0 md:-mr-18"
+            className="object-contain h-full w-auto md:absolute md:bottom-0 md:right-0 md:-mr-1"
           />
         </div>
 
