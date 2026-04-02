@@ -1,5 +1,5 @@
 type SectionHeadingProps = {
-  title: string;
+  title?: string;
   description?: string;
   icon?: React.ReactNode;
 }
