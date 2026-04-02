@@ -50,7 +50,7 @@ export function WorkEducation() {
       <div className="relative flex flex-col md:flex-row items-stretch justify-center -ml-0 md:-ml-200">
 
         {/* IMAGE */}
-        <div className="relative md:w-1/2 flex justify-end sm:justify-center">
+        <div className="relative md:w-1/2 flex justify-end sm:justify-center hidden md:block">
           <Image
             src="/ExAndEducation.png"
             alt="Profile"
@@ -61,7 +61,7 @@ export function WorkEducation() {
         </div>
 
         {/* CONTENT */}
-        <div className="border-2 border-purple-400 rounded-t-[200px] rounded-b-lg px-10 py-30 max-w-md w-full">
+        <div className="border-2 border-purple-400 dark:border-white rounded-t-[200px] rounded-b-lg px-10 py-30 max-w-md w-full shadow-2xl dark:shadow-purple-400 dark:shadow-lg">
 
           {/* WORK EXPERIENCE */}
           <h2 className="text-3xl italic font-semibold mb-6 text-start">
