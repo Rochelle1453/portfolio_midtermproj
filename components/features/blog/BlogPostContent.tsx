@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { SectionHeading } from "@/components/common/SectionHeading";
+import { Section } from "@/components/common/Section";
+import { MoveLeft } from "lucide-react";
 import { BlogPost } from "@/constants/blog";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft } from "lucide-react";
-import { Section } from "@/components/common/Section";
 
 interface BlogPostContentProps {
   post: BlogPost;
@@ -10,15 +11,15 @@ interface BlogPostContentProps {
 
 export function BlogPostContent({ post }: BlogPostContentProps) {
   return (
-    <Section className="py-12">
-      <Link 
-        href="/blog" 
-        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-8 transition-colors"
-      >
-        <ArrowLeft size={16} />
-        Back to Blog
-      </Link>
-
+    <Section className="space-y-12 min-h-screen">
+      <SectionHeading
+        icon={
+          <Link href="/blog" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-8 transition-colors">
+            <MoveLeft size={16} />
+            Back to Blog
+          </Link>
+        }
+      />
       <div className="space-y-4 mb-8">
         <div className="flex gap-2">
           {post.category.map((cat) => (
@@ -45,15 +46,7 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
           {post.content}
         </div>
       </div>
-
-      <div className="mt-16 p-6 rounded-2xl bg-muted/50 border border-dashed text-center">
-        <p className="text-sm font-mono text-muted-foreground">
-          Route Strategy: <span className="text-primary">[slug]</span>
-        </p>
-        <p className="text-xs text-muted-foreground mt-1">
-          This matches an exact segment. Variable: slug = &quot;{post.slug}&quot;
-        </p>
-      </div>
     </Section>
+    
   );
 }
