@@ -47,7 +47,7 @@ export function ContactForm() {
 		<Section className="min-h-screen">
 			 <SectionHeading
               icon={<MoveRight className="h-8 w-8 text-primary" />}
-              title="CONTACT"
+              title="Contact"
             />
 			<div className="grid lg:grid-cols-2 lg:gap-24 gap-12 items-center mt-0 lg:mt-[-50px]">
 				<Card className="w-full">
