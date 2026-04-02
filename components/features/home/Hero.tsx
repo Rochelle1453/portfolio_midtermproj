@@ -7,7 +7,7 @@ import { Section } from "@/components/common/Section";
 export function Hero() {
     return (
         <Section className="grid lg:grid-cols-2 gap-8 items-center min-h-[calc(100vh-4rem)]">
-            <div className="flex flex-col items-center lg:items-start justify-center space-y-8">
+            <div className="order-2 lg:order-1 flex flex-col items-center lg:items-start justify-center space-y-8">
                 <div className="space-y-10">
                     <div className="flex flex-col items-center">
                         <h1 className="text-xl font-bold tracking-tight sm:text-2xl md:text-4xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-foreground to-purple-800/70">
@@ -37,7 +37,7 @@ export function Hero() {
                             <Github className="h-6 w-6" />
                             <span className="sr-only">Github</span>
                         </Link>
-                        <Link href="https://www.instagram.com/reels/DTiS1ihAYHF/?hl=en" className="border border-purple-500 rounded-[99px] p-1 hover:text-foreground transition-colors">
+                        <Link href="https://www.instagram.com/itz_rchll_21/" className="border border-purple-500 rounded-[99px] p-1 hover:text-foreground transition-colors">
                             <Instagram className="h-6 w-6" />
                             <span className="sr-only">Instagram</span>
                         </Link>
@@ -45,7 +45,7 @@ export function Hero() {
                 </div>
             </div>
 
-            <div className="flex justify-center items-center">
+            <div className="order-1 lg:order-2 flex justify-center items-center">
                 <Image
                     src="/home.png"
                     alt="Me Image"
