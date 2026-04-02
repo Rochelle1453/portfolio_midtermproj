@@ -45,11 +45,11 @@ export function ContactForm() {
 
 	return (
 		<Section className="min-h-screen">
-			<SectionHeading
-				icon={<MoveRight className="h-8 w-8 text-primary" />}
-				title="CONTACT"
-			/>
-			<div className="grid lg:grid-cols-2 lg:gap-24 gap-12 items-center">
+			 <SectionHeading
+              icon={<MoveRight className="h-8 w-8 text-primary" />}
+              title="CONTACT"
+            />
+			<div className="grid lg:grid-cols-2 lg:gap-24 gap-12 items-center mt-0 lg:mt-[-50px]">
 				<Card className="w-full">
 					<CardHeader>
 						<CardTitle className="text-4xl font-bold">Let&apos;s Talk</CardTitle>
@@ -193,7 +193,7 @@ export function ContactForm() {
 								<a href="https://www.instagram.com/itz_rchll_21/" target="_blank" rel="noopener noreferrer">
 									<Instagram />
 								</a><Dot />
-								<a href="https://github.com/Rochelle1453" target="_blank" rel="noopener noreferrer">
+								<a href="https://github.com/Rochelle1453" target="_blank" rel="noopener noreferrer" >
 									<Github />
 								</a>
 							</div>
